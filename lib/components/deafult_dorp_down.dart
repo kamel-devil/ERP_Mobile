@@ -1,4 +1,3 @@
-import 'package:erp_app/controller/controller.dart';
 import 'package:erp_app/resources/color_manger.dart';
 import 'package:erp_app/resources/value_manager.dart';
 import 'package:erp_app/size_config.dart';
@@ -34,7 +33,6 @@ class _DefaultDropDownState extends State<DefaultDropDown> {
 
   @override
   Widget build(BuildContext context) {
-    var pro = Provider.of<Controller>(context);
     SizeConfig.init(context);
     return ExpansionTile(
         initiallyExpanded: selectedTap == widget.index ? true : false,
@@ -65,7 +63,7 @@ class _DefaultDropDownState extends State<DefaultDropDown> {
                     selectedItem = i;
                     selectedTap = widget.index;
                   });
-                  QR.navigator.replaceLast(pro.screen[widget.index][i]);
+                  // QR.navigator.replaceLast(pro.screen[widget.index][i]);
                 },
                 title: Text(
                   widget.item[i],

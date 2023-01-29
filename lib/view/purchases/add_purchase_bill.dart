@@ -6,9 +6,7 @@ import 'package:erp_app/components/default_container.dart';
 import 'package:erp_app/components/default_table.dart';
 import 'package:erp_app/components/drop_down.dart';
 import 'package:erp_app/components/text_fom_feild.dart';
-import 'package:erp_app/controller/category/category_controller.dart';
-import 'package:erp_app/controller/purchase_controller/pruchase_controller.dart';
-import 'package:erp_app/controller/suppliers/add_suppliers.dart';
+
 import 'package:erp_app/resources/assets_manager.dart';
 import 'package:erp_app/resources/color_manger.dart';
 import 'package:erp_app/resources/style_manager.dart';

@@ -3,7 +3,6 @@ import 'package:erp_app/components/botton.dart';
 import 'package:erp_app/components/default_container.dart';
 import 'package:erp_app/components/drop_down.dart';
 import 'package:erp_app/components/text_fom_feild.dart';
-import 'package:erp_app/controller/category/category_controller.dart';
 import 'package:erp_app/resources/assets_manager.dart';
 import 'package:erp_app/resources/color_manger.dart';
 import 'package:erp_app/resources/style_manager.dart';
@@ -32,8 +31,6 @@ class _AddCatState extends State<AddCat> {
   Widget build(BuildContext context) {
     SizeConfig.init(context);
     TextStyle style = TextStyle(fontSize: getProportionateScreenWidth(4));
-    var pro = Provider.of<CategoryController>(context);
-
     return SafeArea(
         child: Scaffold(
       body:                   SizedBox(
@@ -320,16 +317,16 @@ class _AddCatState extends State<AddCat> {
                 color: ColorManager.white,
                 title: 'اضافه',
                 onTap: () {
-                  pro.addMaterial(
-                      '',
-                      chose1!,
-                      int.parse(controller2.text),
-                      chose2!,
-                      controller1.text,
-                      int.parse(controller3.text),
-                      double.parse(controller4.text),
-                      chose3!,
-                      0);
+                  // pro.addMaterial(
+                  //     '',
+                  //     chose1!,
+                  //     int.parse(controller2.text),
+                  //     chose2!,
+                  //     controller1.text,
+                  //     int.parse(controller3.text),
+                  //     double.parse(controller4.text),
+                  //     chose3!,
+                  //     0);
                 },
                 bgColor: ColorManager.black,
               ),
