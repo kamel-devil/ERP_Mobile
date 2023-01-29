@@ -25,7 +25,12 @@ class Botton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: () => onTap(),
-        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(bgColor)),
+        
+        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(bgColor),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+          ))
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Text(title,

@@ -1,8 +1,11 @@
+import 'package:erp_app/view/home/homepage.dart';
 import 'package:erp_app/view/orders/account_statement.dart';
 import 'package:erp_app/view/orders/add_orders.dart';
+import 'package:erp_app/view/purchases/confirm_purchase.dart';
 import 'package:erp_app/view/store/stores.dart';
 import 'package:erp_app/view/suppliers/suppliers.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 
 import 'view/purchases/add_purchase_bill.dart';
@@ -18,11 +21,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      locale: const Locale('ar'),
       // routeInformationParser: const QRouteInformationParser(),
       // routerDelegate: QRouterDelegate(Routes.routes),
       debugShowCheckedModeBanner: false,
-      locale: const Locale('ar'),
       title: 'ERB System',
       theme: ThemeData(
         primarySwatch: Colors.blue,

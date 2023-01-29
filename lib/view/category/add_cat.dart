@@ -1,4 +1,3 @@
-
 import 'package:erp_app/components/botton.dart';
 import 'package:erp_app/components/default_container.dart';
 import 'package:erp_app/components/drop_down.dart';
@@ -30,21 +29,21 @@ class _AddCatState extends State<AddCat> {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-    TextStyle style = TextStyle(fontSize: getProportionateScreenWidth(4));
+    TextStyle style = TextStyle(fontSize: getProportionateScreenWidth(20));
     return SafeArea(
         child: Scaffold(
-      body:                   SizedBox(
+      body: SizedBox(
         width: double.infinity,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 60,
+                height: 16,
               ),
               DefaultContainer(title: 'اضافة صنف'),
               const SizedBox(
-                height: 60,
+                height: 32,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -58,14 +57,12 @@ class _AddCatState extends State<AddCat> {
                         height: getProportionateScreenHeight(132),
                         decoration: BoxDecoration(
                             border: Border.all(
-                              color: Colors.black,
-                              width: 2,
-                            )),
+                          color: Colors.black,
+                          width: 2,
+                        )),
                         child: Column(
-                          crossAxisAlignment:
-                          CrossAxisAlignment.center,
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Text(
                               'ارفاق ايصال الدفع',
@@ -75,12 +72,8 @@ class _AddCatState extends State<AddCat> {
                                 onTap: () {},
                                 child: Image.asset(
                                   ImageAssets.iconDropDown20,
-                                  width:
-                                  getProportionateScreenWidth(
-                                      35),
-                                  height:
-                                  getProportionateScreenHeight(
-                                      85),
+                                  width: getProportionateScreenWidth(35),
+                                  height: getProportionateScreenHeight(85),
                                 ))
                           ],
                         ),
@@ -116,11 +109,7 @@ class _AddCatState extends State<AddCat> {
                     height: 80,
                     padding: const EdgeInsets.only(top: 35),
                     child: dropDown(
-                      const [
-                        'مواد خام',
-                        'منتج التشغيل',
-                        "منتج تام"
-                      ],
+                      const ['مواد خام', 'منتج التشغيل', "منتج تام"],
                       selectTalab: chose2,
                       onchanged: () => (val) {
                         setState(() {
@@ -142,8 +131,7 @@ class _AddCatState extends State<AddCat> {
                         'الاسم',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize:
-                            getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(5)),
                       ),
                       const SizedBox(
                         height: 10,
@@ -183,8 +171,7 @@ class _AddCatState extends State<AddCat> {
                         'الحد الادني للمخزون',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize:
-                            getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(5)),
                       ),
                       const SizedBox(
                         height: 10,
@@ -215,8 +202,7 @@ class _AddCatState extends State<AddCat> {
                         'الرصيد الافتتاحي',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize:
-                            getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(5)),
                       ),
                       const SizedBox(
                         height: 10,
@@ -247,8 +233,7 @@ class _AddCatState extends State<AddCat> {
                         'السعر',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize:
-                            getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(5)),
                       ),
                       const SizedBox(
                         height: 10,
@@ -287,12 +272,7 @@ class _AddCatState extends State<AddCat> {
                     height: 80,
                     padding: const EdgeInsets.only(top: 35),
                     child: dropDown(
-                      const [
-                        'مفروشات',
-                        'منتجات شاطئ',
-                        "اثاث",
-                        "ديكور"
-                      ],
+                      const ['مفروشات', 'منتجات شاطئ', "اثاث", "ديكور"],
                       selectTalab: chose3,
                       onchanged: () => (val) {
                         setState(() {
@@ -334,6 +314,6 @@ class _AddCatState extends State<AddCat> {
           ),
         ),
       ),
-        ));
+    ));
   }
 }

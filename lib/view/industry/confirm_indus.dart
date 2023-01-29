@@ -1,4 +1,3 @@
-
 import 'package:erp_app/components/botton.dart';
 import 'package:erp_app/components/default_container.dart';
 import 'package:erp_app/components/drop_down.dart';
@@ -42,71 +41,56 @@ class _ConfirmIndusState extends State<ConfirmIndus> {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-    TextStyle style = TextStyle(fontSize: getProportionateScreenWidth(4));
+    TextStyle style = TextStyle(fontSize: getProportionateScreenWidth(20));
     return SafeArea(
         child: Scaffold(
-      body:                   SizedBox(
+      body: SizedBox(
         width: double.infinity,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(
-                height: 50,
+                height: 32,
               ),
               DefaultContainer(title: 'تأكيد امر التصنيع'),
               const SizedBox(
-                height: 50,
+                height: 10,
               ),
+              SizedBox(
+                width: getProportionateScreenWidth(150),
+                height: getProportionateScreenHeight(90),
+                child: dropDown(
+                  const ['تم الانتهاء', 'في التصنيع'],
+                  selectTalab: chose2,
+                  onchanged: () => (val) {
+                    setState(() {
+                      chose2 = val;
+                    });
+                  },
+                  label: 'حاله التصنيع',
+                  foColor: Colors.white,
+                  bgColor: ColorManager.primary,
+                  dpColor: ColorManager.primary,
+                ),
+              ),
+
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Column(
                     children: [
                       Text(
-                        'اجمالي التكلفه',
-                        style: getSemiBoldStyle(
-                            color: ColorManager.black),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      SizedBox(
-                        width: getProportionateScreenWidth(50),
-                        height: 60,
-                        child: DefaultInputForm(
-                          controller: controller1,
-                          hint: '',
-                          label: '',
-                          onTab: () {},
-                          validate: () {},
-                          onSave: () {},
-                          passFun: () {},
-                          color: Colors.grey,
-                          obscureText: false,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
-                  Column(
-                    children: [
-                      Text(
                         'الكميه',
-                        style: getSemiBoldStyle(
-                            color: ColorManager.black),
+                        style: getSemiBoldStyle(color: ColorManager.black),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(50),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: DefaultInputForm(
                           controller: controller2,
@@ -122,21 +106,17 @@ class _ConfirmIndusState extends State<ConfirmIndus> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
                   Column(
                     children: [
                       Text(
                         'اسم المنتج',
-                        style: getSemiBoldStyle(
-                            color: ColorManager.black),
+                        style: getSemiBoldStyle(color: ColorManager.black),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(50),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: DefaultInputForm(
                           controller: controller3,
@@ -153,11 +133,40 @@ class _ConfirmIndusState extends State<ConfirmIndus> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'اجمالي التكلفه',
+                        style: getSemiBoldStyle(color: ColorManager.black),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: getProportionateScreenWidth(150),
+                        height: 60,
+                        child: DefaultInputForm(
+                          controller: controller1,
+                          hint: '',
+                          label: '',
+                          onTab: () {},
+                          validate: () {},
+                          onSave: () {},
+                          passFun: () {},
+                          color: Colors.grey,
+                          obscureText: false,
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
-                    width: getProportionateScreenWidth(41),
+                    width: getProportionateScreenWidth(150),
                     height: getProportionateScreenHeight(90),
                     padding: const EdgeInsets.only(top: 35),
                     child: dropDown(
@@ -174,40 +183,26 @@ class _ConfirmIndusState extends State<ConfirmIndus> {
                       dpColor: ColorManager.primary,
                     ),
                   ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(1),
-                  ),
                 ],
               ),
-              const SizedBox(
-                height: 90,
-              ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
                   Column(
                     children: [
                       Text(
                         'التاريخ',
-                        style: getSemiBoldStyle(
-                            color: ColorManager.black),
-                      ),
-                      const SizedBox(
-                        height: 10,
+                        style: getSemiBoldStyle(color: ColorManager.black),
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(40),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: ElevatedButton(
                           onPressed: () => _selectDate(context),
                           style: ButtonStyle(
                               backgroundColor:
-                              MaterialStateProperty.all(
-                                  Colors.white)),
+                                  MaterialStateProperty.all(Colors.white)),
                           child: Text(
                             "${orderDate.year.toString()}/${orderDate.month.toString().padLeft(2, '0')}/${orderDate.day.toString().padLeft(2, '0')}",
                             style: const TextStyle(
@@ -218,21 +213,14 @@ class _ConfirmIndusState extends State<ConfirmIndus> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
                   Column(
                     children: [
                       Text(
                         'اضافه خاصه للعميل',
-                        style: getSemiBoldStyle(
-                            color: ColorManager.black),
-                      ),
-                      const SizedBox(
-                        height: 10,
+                        style: getSemiBoldStyle(color: ColorManager.black),
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(50),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: DefaultInputForm(
                           controller: controller4,
@@ -249,38 +237,59 @@ class _ConfirmIndusState extends State<ConfirmIndus> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
-                  Container(
-                    width: getProportionateScreenWidth(40),
-                    height: getProportionateScreenHeight(90),
-                    padding: const EdgeInsets.only(top: 35),
-                    child: dropDown(
-                      const ['تم الانتهاء', 'في التصنيع'],
-                      selectTalab: chose2,
-                      onchanged: () => (val) {
-                        setState(() {
-                          chose2 = val;
-                        });
-                      },
-                      label: 'حاله التصنيع',
-                      foColor: Colors.white,
-                      bgColor: ColorManager.primary,
-                      dpColor: ColorManager.primary,
-                    ),
-                  ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(1),
-                  ),
+
+
                 ],
               ),
               const SizedBox(
-                height: 100,
+                height: 20,
+              ),
+              Container(
+                width: getProportionateScreenWidth(200),
+                height: getProportionateScreenHeight(200),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                      color: Colors.black, width: 2),
+                ),
+                child: Column(
+                  mainAxisAlignment:
+                  MainAxisAlignment.start,
+                  crossAxisAlignment:
+                  CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(Icons.more_horiz),
+                        Text(
+                          'ملحوظات',
+                          style: style,
+                        ),
+                        Icon(Icons.close)
+                      ],
+                    ),
+                    const Divider(
+                      color: Colors.black,
+                      thickness: 2,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.multiline,
+                      maxLines: 5,
+                      decoration: const InputDecoration(
+                          border: InputBorder.none),
+                    )
+                  ],
+                ),
+              ),
+
+              const SizedBox(
+                height: 20,
               ),
               Botton(
                 color: ColorManager.white,
-                title: 'تاكيد',
+                title: 'تاكيد التصنيع',
                 onTap: () {},
                 bgColor: ColorManager.primary,
               ),
@@ -288,7 +297,6 @@ class _ConfirmIndusState extends State<ConfirmIndus> {
           ),
         ),
       ),
-
-        ));
+    ));
   }
 }
