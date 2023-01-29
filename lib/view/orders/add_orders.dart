@@ -67,12 +67,12 @@ class _AddOrderState extends State<AddOrder> {
   ];
 
   List<String> columnData = [
-    "صورةالمنتج",
-    "اجمالي سعر البيع",
-    "سعر البيع",
-    "الوحده",
-    "الكميةالمطلوبة",
     "اسم المنتج",
+    "الكميةالمطلوبة",
+    "الوحده",
+    "سعر البيع",
+    "اجمالي سعر البيع",
+    "صورةالمنتج",
   ];
 
   Future<void> _selectDate(BuildContext context) async {
@@ -463,30 +463,32 @@ class _AddOrderState extends State<AddOrder> {
                   color: ColorManager.primary,
                   rows: data
                       .map((data) => DataRow(cells: [
-                            DataCell(Image.asset(
+                    DataCell(Text(
+                      data['1'],
+                      style: style,
+                    )),
+                    DataCell(Text(
+                      data['2'],
+                      style: style,
+                    )),
+                    DataCell(Text(
+                      data['3'],
+                      style: style,
+                    )),
+                    DataCell(Text(
+                      data['4'],
+                      style: style,
+                    )),
+                    DataCell(Text(
+                      data['5'],
+                      style: style,
+                    )),
+
+
+                    DataCell(Image.asset(
                               'assets/images/23.png',
                               width: 50,
                               height: 50,
-                            )),
-                            DataCell(Text(
-                              data['5'],
-                              style: style,
-                            )),
-                            DataCell(Text(
-                              data['4'],
-                              style: style,
-                            )),
-                            DataCell(Text(
-                              data['3'],
-                              style: style,
-                            )),
-                            DataCell(Text(
-                              data['2'],
-                              style: style,
-                            )),
-                            DataCell(Text(
-                              data['1'],
-                              style: style,
                             )),
                           ]))
                       .toList(),

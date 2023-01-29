@@ -1,6 +1,7 @@
 import 'package:erp_app/view/home/homepage.dart';
 import 'package:erp_app/view/orders/account_statement.dart';
 import 'package:erp_app/view/orders/add_orders.dart';
+import 'package:erp_app/view/orders/orders_details.dart';
 import 'package:erp_app/view/purchases/confirm_purchase.dart';
 import 'package:erp_app/view/store/stores.dart';
 import 'package:erp_app/view/suppliers/suppliers.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Suppliers(),
+      home: account_statement(),
     );
   }
 }

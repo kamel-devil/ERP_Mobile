@@ -1,5 +1,3 @@
-
-import 'package:erp_app/components/botton.dart';
 import 'package:erp_app/components/default_container.dart';
 import 'package:erp_app/components/drop_down.dart';
 import 'package:erp_app/components/text_fom_feild.dart';
@@ -55,11 +53,12 @@ class _account_statementState extends State<account_statement> {
   ];
 
   List<String> columnData = [
-    "المبلغ",
-    "حاله الدفع",
-    "رقم الموبيل",
-    "اسم العميل",
     "رقم الطلب",
+    "اسم العميل",
+    "رقم الموبيل",
+    "حاله الدفع",
+
+    "المبلغ",
   ];
 
   List<String> dataTable = ["الطلبات"];
@@ -257,93 +256,98 @@ class _account_statementState extends State<account_statement> {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-
                         children: [
-                          Padding(
-                            padding:
-                                 const EdgeInsets.only(top: 125),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: List.generate(
-                                  data.length,
-                                  (index) => Column(
-                                        children: [
-                                          SizedBox(
-                                              width:
-                                                  getProportionateScreenWidth(120),
-                                              height: getProportionateScreenHeight(40),
-                                              child: dropDown(
-                                                const [
-                                                  'تحصيل',
-                                                  'رفض استلام',
-                                                ],
-                                                selectTalab: index == selectedIndex
-                                                    ? chose1
-                                                    : chose2,
-                                                onchanged: () => (val) {
-                                                  if (val == 'تحصيل') {
-                                                    setState(() {
-                                                      isVisible = true;
-                                                    });
-                                                  }
-                                                  setState(() {
-                                                    selectedIndex = index;
-                                                    chose1 = val;
-                                                  });
-                                                },
-                                                label: 'خيارات',
-                                                foColor: Colors.white,
-                                                bgColor: ColorManager.primary,
-                                                dpColor: ColorManager.primary,
-                                              )),
-                                          const SizedBox(
-                                            height: 10,
-                                          )
-                                        ],
-                                      )),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 32,
-                          ),
                           Stack(
                             children: [
-                              SizedBox(
-                                width: getProportionateScreenWidth(290),
-                                child: MergeTable(
-                                  borderColor: Colors.black,
-                                  alignment: MergeTableAlignment.center,
-                                  columns: [
-                                    MMergedColumns(
-                                      header: "الطلبات",
-                                      columns: columnData,
-                                    ),
-                                  ],
-                                  rows: data
-                                      .map(
-                                        (e) => [
-                                          MMergedRows([
-                                            Text(
-                                              e['5'],
-                                              style: style,
-                                            ),
-                                            Text(
-                                              e['4'],
-                                              style: style,
-                                            ),
-                                            Text(e['3'], style: style),
-                                            Text(e['2'], style: style),
-                                            Text(e['1'], style: style),
-                                          ]),
-                                        ],
-                                      )
-                                      .toList(),
-                                  color: ColorManager.second,
-                                  size: getProportionateScreenWidth(20),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SizedBox(
+                                  width: getProportionateScreenWidth(290),
+                                  child: MergeTable(
+                                    borderColor: Colors.black,
+                                    alignment: MergeTableAlignment.center,
+                                    columns: [
+                                      MMergedColumns(
+                                        header: "الطلبات",
+                                        columns: columnData,
+                                      ),
+                                    ],
+                                    rows: data
+                                        .map(
+                                          (e) => [
+                                            MMergedRows([
+                                              Text(e['1'], style: style),
+                                              Text(e['2'], style: style),
+                                              Text(e['3'], style: style),
+                                              Text(
+                                                e['4'],
+                                                style: style,
+                                              ),
+
+                                              Text(
+                                                e['5'],
+                                                style: style,
+                                              ),
+                                            ]),
+                                          ],
+                                        )
+                                        .toList(),
+                                    color: ColorManager.second,
+                                    size: getProportionateScreenWidth(20),
+                                  ),
                                 ),
                               ),
                             ],
                           ),
+                          const SizedBox(
+                            width: 32,
+                          ),
+
+                          Padding(
+                            padding:
+                            const EdgeInsets.only(top: 125),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: List.generate(
+                                  data.length,
+                                      (index) => Column(
+                                    children: [
+                                      SizedBox(
+                                          width:
+                                          getProportionateScreenWidth(120),
+                                          height: getProportionateScreenHeight(40),
+                                          child: dropDown(
+                                            const [
+                                              'تحصيل',
+                                              'رفض استلام',
+                                            ],
+                                            selectTalab: index == selectedIndex
+                                                ? chose1
+                                                : chose2,
+                                            onchanged: () => (val) {
+                                              if (val == 'تحصيل') {
+                                                setState(() {
+                                                  isVisible = true;
+                                                });
+                                              }
+                                              setState(() {
+                                                selectedIndex = index;
+                                                chose1 = val;
+                                              });
+                                            },
+                                            label: 'خيارات',
+                                            foColor: Colors.white,
+                                            bgColor: ColorManager.primary,
+                                            dpColor: ColorManager.primary,
+                                          )),
+                                      const SizedBox(
+                                        height: 10,
+                                      )
+                                    ],
+                                  )),
+                            ),
+                          ),
+
                         ],
                       ),
                     )

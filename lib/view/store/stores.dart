@@ -18,14 +18,14 @@ class Stock extends StatefulWidget {
 
 class _StockState extends State<Stock> {
   List<String> columnData = [
-    "الرصيد",
     "المخزن",
+    "الرصيد",
   ];
 
   List data = [
     {
-      "1": "١/١٢.٢٠٢٢",
-      "2": "شراء",
+      "1": "مخزن مواد خام",
+      "2": " ٥٠٠٠ جنيه",
     }
   ];
   @override

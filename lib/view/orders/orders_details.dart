@@ -66,22 +66,22 @@ class _TalabatState extends State<Talabat> {
   }
 
   List<String> dataTable = [
-    'تاريخ الحاله',
-    'طريقه الشحن',
-    'موجل',
-    'خط التوزيع',
-    'شركه الشحن',
-    'المدفوع',
-    'حاله الدفع',
-    'اجمالي الفاتوره',
-    'رقم التليفون',
-    'اسم العميل',
-    'المدينة',
-    'المحافظة',
-    'حالة الطلب',
-    'نوع الطلب',
-    'تاريخ الطلب',
     'رقم الطلب',
+    'تاريخ الطلب',
+    'نوع الطلب',
+    'حالة الطلب',
+    'المحافظة',
+    'المدينة',
+    'اسم العميل',
+    'رقم التليفون',
+    'اجمالي الفاتوره',
+    'حاله الدفع',
+    'المدفوع',
+    'شركه الشحن',
+    'خط التوزيع',
+    'موجل',
+    'طريقه الشحن',
+    'تاريخ الحاله',
   ];
   List data = [
     {
@@ -114,11 +114,11 @@ class _TalabatState extends State<Talabat> {
       "9": "١٢٠٠",
       "10": "مستحق",
       "11": "0",
-      "12": " ",
-      "14": " ",
+      "12": "aaaaa",
+      "14": "aaaaa",
       "15": "عدد 1",
       "16": "small",
-      "18": " ",
+      "18": "aaa",
     },
     {
       "1": "0",
@@ -132,11 +132,11 @@ class _TalabatState extends State<Talabat> {
       "9": "١٢٠٠",
       "10": "مستحق",
       "11": "0",
-      "12": " ",
-      "14": " ",
+      "12": "aaaaa",
+      "14": "aaaaa",
       "15": "عدد 1",
       "16": "small",
-      "18": " ",
+      "18": "aaa",
     },
     {
       "1": "0",
@@ -150,48 +150,13 @@ class _TalabatState extends State<Talabat> {
       "9": "١٢٠٠",
       "10": "مستحق",
       "11": "0",
-      "12": " ",
-      "14": " ",
+      "12": "aaaaa",
+      "14": "aaaaa",
       "15": "عدد 1",
       "16": "small",
-      "18": " ",
+      "18": "aaa",
     },
-    {
-      "1": "0",
-      "2": "1/11/1111",
-      "3": "جديد",
-      "4": "جديد",
-      "5": "القاهرة",
-      "6": "مدينة نصر",
-      "7": "احمد",
-      "8": "١٢٣٢١٣١٢",
-      "9": "١٢٠٠",
-      "10": "مستحق",
-      "11": "0",
-      "12": " ",
-      "14": " ",
-      "15": "عدد 1",
-      "16": "small",
-      "18": " ",
-    },
-    {
-      "1": "0",
-      "2": "1/11/1111",
-      "3": "جديد",
-      "4": "جديد",
-      "5": "القاهرة",
-      "6": "مدينة نصر",
-      "7": "احمد",
-      "8": "١٢٣٢١٣١٢",
-      "9": "١٢٠٠",
-      "10": "مستحق",
-      "11": "0",
-      "12": " ",
-      "14": " ",
-      "15": "عدد 1",
-      "16": "small",
-      "18": " ",
-    },
+
   ];
 
   List data1 = [
@@ -803,134 +768,137 @@ class _TalabatState extends State<Talabat> {
                                   ),
                                   rows: data
                                       .map((data) => DataRow(cells: [
-                                            DataCell(Text(
-                                              data['18'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['16'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['15'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['14'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['12'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['11'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['10'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['9'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['8'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['7'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['6'],
-                                              style: style,
-                                            )),
-                                            DataCell(Text(
-                                              data['5'],
-                                              style: style,
-                                            )),
-                                            DataCell(
-                                              Container(
-                                                  color: const Color(0xff82225E),
-                                                  child: Text(
-                                                    'تم الشحن',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize:
-                                                            getProportionateScreenWidth(
-                                                                20)),
-                                                  )),
-                                            ),
-                                            DataCell(
-                                              Column(
-                                                children: [
-                                                  Text(
-                                                    'مستعمل',
-                                                    style: style,
-                                                  ),
-                                                  Icon(
-                                                    Icons.notifications,
-                                                    color: const Color(0xff82225E),
-                                                    size:
-                                                        getProportionateScreenWidth(
-                                                            10),
-                                                  )
-                                                ],
+
+                                    DataCell(
+                                      Column(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          const Text(
+                                            '0',
+                                          ),
+                                          Row(
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                            children: [
+                                              InkWell(
+                                                child: Image.asset(
+                                                  ImageAssets
+                                                      .iconDropDown29,
+                                                  width: 20,
+                                                  height: 20,
+                                                ),
+                                                onTap: () {},
                                               ),
-                                            ),
-                                            DataCell(Text(
-                                              data['2'],
-                                              style: style,
-                                            )),
-                                            DataCell(
-                                              Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  const Text(
-                                                    '0',
-                                                  ),
-                                                  Row(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.center,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.center,
-                                                    children: [
-                                                      InkWell(
-                                                        child: Image.asset(
-                                                          ImageAssets
-                                                              .iconDropDown29,
-                                                          width: 20,
-                                                          height: 20,
-                                                        ),
-                                                        onTap: () {},
-                                                      ),
-                                                      Image.asset(
-                                                        ImageAssets.iconDropDown28,
-                                                        width: 20,
-                                                        height: 30,
-                                                      ),
-                                                      InkWell(
-                                                        child: Image.asset(
-                                                          ImageAssets
-                                                              .iconDropDown27,
-                                                          width: 20,
-                                                          height: 30,
-                                                        ),
-                                                        onTap: () {
-                                                          setState(() {
-                                                            visable = !visable;
-                                                          });
-                                                        },
-                                                      ),
-                                                    ],
-                                                  )
-                                                ],
+                                              Image.asset(
+                                                ImageAssets.iconDropDown28,
+                                                width: 20,
+                                                height: 30,
                                               ),
-                                            )
+                                              InkWell(
+                                                child: Image.asset(
+                                                  ImageAssets
+                                                      .iconDropDown27,
+                                                  width: 20,
+                                                  height: 30,
+                                                ),
+                                                onTap: () {
+                                                  setState(() {
+                                                    visable = !visable;
+                                                  });
+                                                },
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    DataCell(Text(
+                                      data['2'],
+                                      style: style,
+                                    )),
+                                    DataCell(
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'مستعمل',
+                                            style: style,
+                                          ),
+                                          Icon(
+                                            Icons.notifications,
+                                            color: const Color(0xff82225E),
+                                            size:
+                                            getProportionateScreenWidth(
+                                                10),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    DataCell(
+                                      Container(
+                                          color: const Color(0xff82225E),
+                                          child: Text(
+                                            'تم الشحن',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize:
+                                                getProportionateScreenWidth(
+                                                    20)),
+                                          )),
+                                    ),
+                                    DataCell(Text(
+                                      data['5'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['6'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['7'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['8'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['9'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['10'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['11'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['12'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['14'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['15'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['16'],
+                                      style: style,
+                                    )),
+                                    DataCell(Text(
+                                      data['18'],
+                                      style: style,
+                                    )),
+
+
                                           ]))
                                       .toList(),
                                 ),

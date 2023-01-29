@@ -50,13 +50,14 @@ class _AddPurchaseBillState extends State<AddPurchaseBill> {
   String? supName;
 
   List<String> columnData = [
-    "",
-    "صوره الصنف",
-    "الاجمالي",
-    "السعر",
-    "الوحده",
-    "الكميه المطلوبه",
     "اسم الصنف",
+    "الكميه المطلوبه",
+    "الوحده",
+    "السعر",
+    "الاجمالي",
+    "صوره الصنف",
+
+    "",
   ];
   List data = [];
 
@@ -570,11 +571,9 @@ class _AddPurchaseBillState extends State<AddPurchaseBill> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
+
                   Column(
                     children: [
                       Text(
