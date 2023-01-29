@@ -25,19 +25,19 @@ class _SuppliersState extends State<Suppliers> {
 
   List data = [
     {
-      "1": "2 طلب",
+      "3": "2 طلب",
       "2": "2000",
-      "3": " احمد",
+      "1": " احمد",
     },
     {
-      "1": "2 طلب",
+      "3": "2 طلب",
       "2": "2000",
-      "3": " احمد",
+      "1": " احمد",
     },
     {
-      "1": "2 طلب",
+      "3": "2 طلب",
       "2": "2000",
-      "3": " احمد",
+      "1": " احمد",
     },
   ];
   List data1 = [
@@ -56,22 +56,11 @@ class _SuppliersState extends State<Suppliers> {
       "2": "2000",
       "3": " PO1",
     },
-
-  ];
-
-  List<String> columnData = [
-    "طلبات قيد الانتظار",
-    "رصيد حساب المورد",
-    "فئه المورد",
-    "العنوان",
-    "رقم الهاتف",
-    "اسم المورد",
   ];
 
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-    TextStyle style = TextStyle(fontSize: getProportionateScreenWidth(5));
     return SafeArea(
         child: Scaffold(
       body: Stack(
@@ -154,18 +143,15 @@ class _SuppliersState extends State<Suppliers> {
                           children: [
                             for (int i = 0; i < data1.length; i++)
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(),
-                                  Botton(
-                                      color: ColorManager.white,
-                                      title: 'تفاصيل',
-                                      onTap: () {},
-                                      bgColor: ColorManager.primary),
                                   Container(
                                     height: 50,
-                                    width:getProportionateScreenWidth(250),
-                                    margin: const EdgeInsets.symmetric(vertical: 3),
+                                    width: getProportionateScreenWidth(250),
+                                    margin:
+                                        const EdgeInsets.symmetric(vertical: 3),
                                     decoration: BoxDecoration(
                                         color: ColorManager.primary,
                                         borderRadius:
@@ -174,9 +160,11 @@ class _SuppliersState extends State<Suppliers> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        SizedBox(width: 10,),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
                                         Text(
-                                          data1[index]['3'],
+                                          data1[index]['1'],
                                           style: getBoldStyle(
                                             color: Colors.white,
                                             fontSize: 18,
@@ -192,16 +180,23 @@ class _SuppliersState extends State<Suppliers> {
                                         ),
                                         Expanded(child: Container()),
                                         Text(
-                                          data1[index]['1'],
+                                          data1[index]['3'],
                                           style: getBoldStyle(
                                             color: Colors.white,
                                             fontSize: 18,
                                           ),
                                         ),
-                                        SizedBox(width: 10,),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
                                       ],
                                     ),
                                   ),
+                                  Botton(
+                                      color: ColorManager.white,
+                                      title: 'تفاصيل',
+                                      onTap: () {},
+                                      bgColor: ColorManager.primary),
                                 ],
                               ),
                           ]),
