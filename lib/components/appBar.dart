@@ -22,7 +22,7 @@ class DefaultAppBar extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.notifications,
-              size: getProportionateScreenWidth(15),
+              size: getProportionateScreenWidth(30),
               color: const Color(0xff82225E),
             )),
         Padding(
@@ -32,7 +32,7 @@ class DefaultAppBar extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: getProportionateScreenWidth(6)),
+                fontSize: getProportionateScreenWidth(15)),
           ),
         ),
       ],

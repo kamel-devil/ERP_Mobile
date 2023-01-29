@@ -1,6 +1,7 @@
 import 'package:erp_app/view/orders/account_statement.dart';
 import 'package:erp_app/view/orders/add_orders.dart';
 import 'package:erp_app/view/store/stores.dart';
+import 'package:erp_app/view/suppliers/suppliers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AddOrder(),
+      home: Suppliers(),
     );
   }
 }

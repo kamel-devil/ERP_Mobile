@@ -30,7 +30,7 @@ class Botton extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: Text(title,
               style: getSemiBoldStyleAR(
-                  color: color, fontSize: getProportionateScreenWidth(5))),
+                  color: color, fontSize: getProportionateScreenWidth(15))),
         ));
   }
 }
