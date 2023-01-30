@@ -123,7 +123,7 @@ class _CategoriesState extends State<Categories> {
                   child: ListView.separated(
                     shrinkWrap: true,
                     itemBuilder: (context, index) => Container(
-                      margin: EdgeInsets.all(6),
+                      margin: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
                           color: ColorManager.second,
                           borderRadius: BorderRadius.circular(20)),
