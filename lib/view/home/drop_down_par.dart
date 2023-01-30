@@ -100,19 +100,20 @@ class DropDownList extends StatelessWidget {
             onTap: () {
               QR.to('/');
             },
-            trailing: Image.asset(ImageAssets.iconDropDown2),
-            title: Center(
-              child:
-              Text(
-                      'الرئيسيه',
-                      style: TextStyle(
-                          fontSize: getProportionateScreenWidth(25),
-                          color: Colors.white),
-                    ),
-            ),
-            leading: Container(
+            trailing:Container(
               width: 2,
-            )),
+            ),
+            title: Center(
+              child: Text(
+                'الرئيسيه',
+                style: TextStyle(
+                    fontSize: getProportionateScreenWidth(25),
+                    color: Colors.white),
+              ),
+            ),
+            leading: Image.asset(ImageAssets.iconDropDown2),
+
+        ),
         const SizedBox(
           height: 10,
         ),
@@ -126,10 +127,12 @@ class DropDownList extends StatelessWidget {
               item: taps[index],
               title: title[index],
               imageUrl: image[index],
-              leading: Image.asset(
-                "assets/images/15.png",width: 35,height: 35,
+              leading: Image.asset(image[index]),
+              trailing: Image.asset(
+                "assets/images/15.png",
+                width: 35,
+                height: 35,
               ),
-              trailing: Image.asset(image[index]),
               index: index,
             ),
             itemCount: 11,

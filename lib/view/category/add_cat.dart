@@ -25,6 +25,8 @@ class _AddCatState extends State<AddCat> {
   TextEditingController controller2 = TextEditingController();
   TextEditingController controller3 = TextEditingController();
   TextEditingController controller4 = TextEditingController();
+  TextEditingController controller5 = TextEditingController();
+  TextEditingController controller6 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,98 +48,22 @@ class _AddCatState extends State<AddCat> {
                 height: 32,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        width: getProportionateScreenWidth(35),
-                        height: getProportionateScreenHeight(132),
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                          color: Colors.black,
-                          width: 2,
-                        )),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              'ارفاق ايصال الدفع',
-                              style: style,
-                            ),
-                            InkWell(
-                                onTap: () {},
-                                child: Image.asset(
-                                  ImageAssets.iconDropDown20,
-                                  width: getProportionateScreenWidth(35),
-                                  height: getProportionateScreenHeight(85),
-                                ))
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                    ],
-                  ),
-                  Container(
-                    width: getProportionateScreenWidth(40),
-                    height: 80,
-                    padding: const EdgeInsets.only(top: 35),
-                    child: dropDown(
-                      const ['كيلو', 'متر', "قطعه", "لوح"],
-                      selectTalab: chose1,
-                      onchanged: () => (val) {
-                        setState(() {
-                          chose1 = val;
-                        });
-                      },
-                      label: 'وحده القياس',
-                      foColor: Colors.white,
-                      bgColor: ColorManager.primary,
-                      dpColor: ColorManager.primary,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 50,
-                  ),
-                  Container(
-                    width: getProportionateScreenWidth(40),
-                    height: 80,
-                    padding: const EdgeInsets.only(top: 35),
-                    child: dropDown(
-                      const ['مواد خام', 'منتج التشغيل', "منتج تام"],
-                      selectTalab: chose2,
-                      onchanged: () => (val) {
-                        setState(() {
-                          chose2 = val;
-                        });
-                      },
-                      label: 'نوع الصنف',
-                      foColor: Colors.white,
-                      bgColor: ColorManager.primary,
-                      dpColor: ColorManager.primary,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 50,
-                  ),
                   Column(
                     children: [
                       Text(
-                        'الاسم',
+                        'اجمالي الفاتورة',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize: getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(20)),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(60),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: DefaultInputForm(
                           controller: controller1,
@@ -153,31 +79,19 @@ class _AddCatState extends State<AddCat> {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    width: 50,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 60,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
                   Column(
                     children: [
                       Text(
-                        'الحد الادني للمخزون',
+                        'مصاريف الشحن',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize: getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(20)),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(60),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: DefaultInputForm(
                           controller: controller2,
@@ -193,22 +107,26 @@ class _AddCatState extends State<AddCat> {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    width: 50,
-                  ),
+                ],
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
                   Column(
                     children: [
                       Text(
-                        'الرصيد الافتتاحي',
+                        'مبلغ تحت الحساب',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize: getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(20)),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(60),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: DefaultInputForm(
                           controller: controller3,
@@ -224,22 +142,19 @@ class _AddCatState extends State<AddCat> {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    width: 50,
-                  ),
                   Column(
                     children: [
                       Text(
-                        'السعر',
+                        'خصم',
                         style: getSemiBoldStyle(
                             color: ColorManager.black,
-                            fontSize: getProportionateScreenWidth(5)),
+                            fontSize: getProportionateScreenWidth(20)),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
-                        width: getProportionateScreenWidth(60),
+                        width: getProportionateScreenWidth(150),
                         height: 60,
                         child: DefaultInputForm(
                           controller: controller4,
@@ -255,8 +170,43 @@ class _AddCatState extends State<AddCat> {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    width: 50,
+                ],
+              ),
+              const SizedBox(
+                height: 60,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+
+                  Column(
+                    children: [
+                      Text(
+                        'صافي القيمة',
+                        style: getSemiBoldStyle(
+                            color: ColorManager.black,
+                            fontSize: getProportionateScreenWidth(20)),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: getProportionateScreenWidth(150),
+                        height: 60,
+                        child: DefaultInputForm(
+                          controller: controller5,
+                          hint: '',
+                          label: '',
+                          onTab: () {},
+                          validate: () {},
+                          onSave: () {},
+                          passFun: () {},
+                          color: Colors.white70,
+                          obscureText: false,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -264,22 +214,48 @@ class _AddCatState extends State<AddCat> {
                 height: 60,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: getProportionateScreenWidth(40),
+                    width: getProportionateScreenWidth(150),
+                    height: getProportionateScreenHeight(150),
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        )),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'ارفاق ايصال الدفع',
+                          style: style,
+                        ),
+                        InkWell(
+                            onTap: () {},
+                            child: Image.asset(
+                              ImageAssets.iconDropDown20,
+                              width: getProportionateScreenWidth(100),
+                              height: getProportionateScreenHeight(100),
+                            ))
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: getProportionateScreenWidth(150),
                     height: 80,
                     padding: const EdgeInsets.only(top: 35),
                     child: dropDown(
-                      const ['مفروشات', 'منتجات شاطئ', "اثاث", "ديكور"],
+                      const ['خزينة المصنع', 'البنك الاهلي', "paymob", "valu"],
                       selectTalab: chose3,
                       onchanged: () => (val) {
                         setState(() {
                           chose3 = val;
                         });
                       },
-                      label: 'فرع الانتاج',
+                      label: 'الخزينة',
                       foColor: Colors.white,
                       bgColor: ColorManager.primary,
                       dpColor: ColorManager.primary,
@@ -290,8 +266,51 @@ class _AddCatState extends State<AddCat> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 32,
+              ),
+              Container(
+                width: getProportionateScreenWidth(200),
+                height: getProportionateScreenHeight(200),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                      color: Colors.black, width: 2),
+                ),
+                child: Column(
+                  mainAxisAlignment:
+                  MainAxisAlignment.start,
+                  crossAxisAlignment:
+                  CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(Icons.more_horiz),
+                        Text(
+                          'ملحوظات',
+                          style: style,
+                        ),
+                        Icon(Icons.close)
+                      ],
+                    ),
+                    const Divider(
+                      color: Colors.black,
+                      thickness: 2,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.multiline,
+                      maxLines: 5,
+                      decoration: const InputDecoration(
+                          border: InputBorder.none),
+                    )
+                  ],
+                ),
+              ),
+
               const SizedBox(
-                height: 100,
+                height: 32,
               ),
               Botton(
                 color: ColorManager.white,

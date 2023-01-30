@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          endDrawer: Drawer(
+          drawer: Drawer(
             backgroundColor: ColorManager.primary,
             child: DropDownList(),
           ),

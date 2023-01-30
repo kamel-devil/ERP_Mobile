@@ -128,7 +128,7 @@ import 'package:erp_app/view/home/homepage.dart';
 //     deferred as transfer_material;
 // import 'package:erp_app/view/store/store_transfer/transfir_to_under_work.dart'
 //     deferred as transfir_to_under_work;
-// import 'package:erp_app/view/store/stores.dart' deferred as stores;
+import 'package:erp_app/view/store/stores.dart' deferred as stores;
 // import 'package:erp_app/view/suppliers/add_cat_sup.dart'
 //     deferred as add_cat_sup;
 // import 'package:erp_app/view/suppliers/add_sup.dart' deferred as AddSup;
@@ -237,13 +237,13 @@ class Routes {
     //     DefferedLoader(po1_details.loadLibrary),
     //   ],
     // ),
-    // QRoute(
-    //   path: '/Stores',
-    //   builder: () => stores.Stock(),
-    //   middleware: [
-    //     DefferedLoader(stores.loadLibrary),
-    //   ],
-    // ),
+    QRoute(
+      path: '/Stores',
+      builder: () => stores.Stock(),
+      middleware: [
+        DefferedLoader(stores.loadLibrary),
+      ],
+    ),
     // QRoute(
     //   path: '/Stores_transfer',
     //   builder: () => Stores_transfer.StoreTransfer(),
