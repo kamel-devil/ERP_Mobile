@@ -1,7 +1,10 @@
 import 'package:erp_app/components/deafult_dorp_down.dart';
+import 'package:erp_app/controller/controller.dart';
 import 'package:erp_app/size_config.dart';
+import 'package:erp_app/view/home/taps/home_tap.dart';
 import 'package:flutter/material.dart';
 import 'package:qlevar_router/qlevar_router.dart';
+import 'package:get/get.dart';
 
 import '../../resources/assets_manager.dart';
 
@@ -94,25 +97,26 @@ class DropDownList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Controller controller = Get.put(Controller());
     return Column(
       children: [
         ListTile(
-            onTap: () {
-              QR.to('/');
-            },
-            trailing:Container(
-              width: 2,
-            ),
-            title: Center(
-              child: Text(
-                'الرئيسيه',
-                style: TextStyle(
-                    fontSize: getProportionateScreenWidth(25),
-                    color: Colors.white),
-              ),
-            ),
-            leading: Image.asset(ImageAssets.iconDropDown2),
+          onTap: () {
+            controller.changePage(HomeTap());
 
+          },
+          trailing: Container(
+            width: 2,
+          ),
+          title: Center(
+            child: Text(
+              'الرئيسيه',
+              style: TextStyle(
+                  fontSize: getProportionateScreenWidth(25),
+                  color: Colors.white),
+            ),
+          ),
+          leading: Image.asset(ImageAssets.iconDropDown2),
         ),
         const SizedBox(
           height: 10,

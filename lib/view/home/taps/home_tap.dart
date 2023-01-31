@@ -134,15 +134,13 @@ class _HomeTapState extends State<HomeTap> {
             height: 30,
           ),
           Expanded(
-
             child: GridView.count(
               shrinkWrap: true,
-
               childAspectRatio: 1.3,
               crossAxisCount: 2,
               crossAxisSpacing: 50,
               mainAxisSpacing: 50,
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(8.0),
               children: List.generate(
                   title.length,
                   (index) => InkWell(

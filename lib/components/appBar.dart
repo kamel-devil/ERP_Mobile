@@ -14,28 +14,31 @@ class DefaultAppBar extends StatelessWidget {
     SizeConfig.init(context);
     String formattedDate = DateFormat('dd/MM/yy').format(now);
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.notifications,
-              size: getProportionateScreenWidth(40),
-              color: const Color(0xff82225E),
-            )),
-        Padding(
-          padding: const EdgeInsets.only(top: 16, right: 16),
-          child: Text(
-            formattedDate,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: getProportionateScreenWidth(20)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.notifications,
+                size: getProportionateScreenWidth(40),
+                color: const Color(0xff82225E),
+              )),
+          Padding(
+            padding: const EdgeInsets.only(top: 16, right: 16),
+            child: Text(
+              formattedDate,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: getProportionateScreenWidth(20)),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

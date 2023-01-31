@@ -120,7 +120,7 @@ class _IndustryOrderState extends State<IndustryOrder> {
                           height: 10,
                         ),
                         SizedBox(
-                          width: getProportionateScreenWidth(130),
+                          width: getProportionateScreenWidth(140),
                           height: 60,
                           child: ElevatedButton(
                             onPressed: () => _selectDate(context),

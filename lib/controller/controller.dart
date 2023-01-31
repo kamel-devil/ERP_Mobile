@@ -1,74 +1,45 @@
 import 'package:erp_app/view/home/taps/home_tap.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
-class Controller with ChangeNotifier {
+import '../view/category/add_cat.dart';
+import '../view/category/category.dart';
+import '../view/industry/confirm_indus.dart';
+import '../view/industry/indus_orders.dart';
+import '../view/purchases/add_purchase_bill.dart';
+import '../view/purchases/purchases.dart';
+import '../view/store/stores.dart';
+import '../view/suppliers/suppliers.dart';
+
+class Controller extends GetxController {
   Widget current = HomeTap();
 
 //
   List screen = [
-    ['/addStore', '/Stores', '/Stores_transfer'],
+    [Container(), Stock(), Container()],
     [
-      '/AddSup',
-      '/add_cat_sup',
-      '/sup_cat',
-      '/suppliers',
-    ],
-    ['/addcat', '/Categories', '/AddNyotin', '/Nyotins', '/Production'],
-    ['/add_purchase_bill', '/purchases', '/confirm_back_purchase'],
-    [
-      '/AddDescIndustry',
-      '/IndustryDesc',
-      '/ConfirmIndus',
-      '/IndustryOrder',
-      '/IndustrySpecialAddition',
+      Container(),
+      Container(),
+      Container(),
+      Suppliers(),
     ],
     [
-      '/AddOrderv',
-      '/Talabat',
-      '/companies_representatives',
-      '/required_list',
-      '/order_sources',
-      '/shipping_methods',
-      '/shipping_lines',
+      const AddCat(),
+      const Categories(),
+
     ],
+    [const AddPurchaseBill(), const Purchases(),],
     [
-      '/list_input',
-      '/audit_pudget',
-      '/Statement_financial_position',
-      '/procurement_report',
-      '/Product_sales_report',
-      '/Stock_report',
-      '/category_profitability_report',
-      '/shipping_companies_report'
-    ],
-    [
-      '/add_expenses',
-      '/expenses',
-      '/types_expenses',
-      '/payment_home',
-      '/add_revenue',
-      '/other_revenue',
-      '/origins',
-      '/add_origins',
-      '/discount_obligations',
-      '/add_obligations',
-      '/company_and_customer',
-      '/individual_clients',
-      '/covenant',
-      '/pay_convenent'
-    ],
-    ['/add_user', '/users', '/permission', '/follow_users'],
-    [
-      '/add_employee',
-      '/employees',
-      '/payroll',
-      '/account_statement_hr',
-      '/advance_exchange'
+      Container(),
+      Container(),
+      const ConfirmIndus(),
+      const IndustryOrder(),
+
     ]
   ];
 
   void changePage(Widget page) {
     current = page;
-    notifyListeners();
+    update();
   }
 }

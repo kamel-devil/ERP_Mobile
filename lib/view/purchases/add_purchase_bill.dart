@@ -452,19 +452,19 @@ class _AddPurchaseBillState extends State<AddPurchaseBill> {
                   ),
                   InkWell(
                     onTap: () {
-                      finalData.add({
-                        "name": catName,
-                        'quantity': quantity.text,
-                        "measurement": catMeasurement,
-                        'price': catPrice,
-                        'image': image,
-                        'total': total.text,
-                      });
-                      totalTotal += double.parse(total.text);
-                      totalQuantity += int.parse(quantity.text);
-                      print(totalTotal);
-                      data1.clear();
-                      setState(() {});
+                      // finalData.add({
+                      //   "name": catName,
+                      //   'quantity': quantity.text,
+                      //   "measurement": catMeasurement,
+                      //   'price': catPrice,
+                      //   'image': image,
+                      //   'total': total.text,
+                      // });
+                      // totalTotal += double.parse(total.text);
+                      // totalQuantity += int.parse(quantity.text);
+                      // print(totalTotal);
+                      // data1.clear();
+                      // setState(() {});
                     },
                     child: Container(
                       width: getProportionateScreenWidth(150),

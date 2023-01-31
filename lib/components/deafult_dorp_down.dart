@@ -2,8 +2,9 @@ import 'package:erp_app/resources/color_manger.dart';
 import 'package:erp_app/resources/value_manager.dart';
 import 'package:erp_app/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:qlevar_router/qlevar_router.dart';
+import 'package:get/get.dart';
+
+import '../controller/controller.dart';
 
 class DefaultDropDown extends StatefulWidget {
   DefaultDropDown(
@@ -34,17 +35,18 @@ class _DefaultDropDownState extends State<DefaultDropDown> {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
+    Controller controller = Get.put(Controller());
     return ExpansionTile(
         initiallyExpanded: selectedTap == widget.index ? true : false,
         trailing: widget.trailing,
         title: Center(
           child: Text(
-                  widget.title,
-                  style: TextStyle(
-                      fontSize: getProportionateScreenWidth(25),
-                      color: Colors.white,
-                  fontWeight: FontWeight.w500),
-                ),
+            widget.title,
+            style: TextStyle(
+                fontSize: getProportionateScreenWidth(25),
+                color: Colors.white,
+                fontWeight: FontWeight.w500),
+          ),
         ),
         leading: widget.leading,
         children: [
@@ -63,6 +65,8 @@ class _DefaultDropDownState extends State<DefaultDropDown> {
                     selectedItem = i;
                     selectedTap = widget.index;
                   });
+                  controller.changePage(controller.screen[widget.index][i]);
+
                   // QR.navigator.replaceLast(pro.screen[widget.index][i]);
                 },
                 title: Text(
