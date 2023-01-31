@@ -25,6 +25,7 @@ class HomePage extends StatelessWidget {
               centerTitle: true,
               elevation: 0,
               title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     ImageAssets.iconDropDown2,
