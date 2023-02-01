@@ -43,12 +43,13 @@ class DefaultInputForm extends StatelessWidget {
       onSaved: onSave(),
       decoration: InputDecoration(
         hintStyle: const TextStyle(fontSize: 14),
+
         label: Container(
             alignment: Alignment.center,
             child: Text(
               label,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white),
+              style:  TextStyle(color: ColorManager.primary),
             )),
         prefixIcon: perFix,
         suffixIcon: suffix,
