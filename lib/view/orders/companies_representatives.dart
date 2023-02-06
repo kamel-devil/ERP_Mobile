@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qlevar_router/qlevar_router.dart';
 
 import '../../components/appBar.dart';
 import '../../components/botton.dart';
@@ -9,7 +8,7 @@ import '../../resources/style_manager.dart';
 import '../../size_config.dart';
 
 class companies_representatives extends StatefulWidget {
-  companies_representatives({Key? key}) : super(key: key);
+  const companies_representatives({Key? key}) : super(key: key);
 
   @override
   State<companies_representatives> createState() =>
