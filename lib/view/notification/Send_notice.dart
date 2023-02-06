@@ -40,7 +40,7 @@ class _SendNoticeState extends State<SendNotice> {
   ];
   TextEditingController controller = TextEditingController();
   TextEditingController controller1 =
-      TextEditingController(text: 'تم الشحن 01');
+      TextEditingController(text: 'تم الشحن  01');
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +140,7 @@ class _SendNoticeState extends State<SendNotice> {
                                   validate: () {},
                                   onSave: () {},
                                   passFun: () {},
-                                  color: Colors.white70,
+                                  color: Colors.yellowAccent,
                                   obscureText: false,
                                 ),
                               ),
@@ -387,7 +387,7 @@ class _SendNoticeState extends State<SendNotice> {
                 child: Stack(children: [
                   Positioned(
                     right: width / 10,
-                    top: height/3.8,
+                    top: height/5,
                     child: CircleAvatar(
                         backgroundColor: Colors.black,
                         radius: 20,

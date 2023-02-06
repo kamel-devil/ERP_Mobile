@@ -1,9 +1,13 @@
 import 'package:erp_app/routes/routes.dart';
+import 'package:erp_app/view/accounts/convenent.dart';
 import 'package:erp_app/view/category/add_cat.dart';
 import 'package:erp_app/view/home/homepage.dart';
 import 'package:erp_app/view/industry/confirm_indus.dart';
+import 'package:erp_app/view/industry/indus_orders.dart';
+import 'package:erp_app/view/notification/Notifications_received.dart';
 import 'package:erp_app/view/orders/account_statement.dart';
 import 'package:erp_app/view/orders/add_orders.dart';
+import 'package:erp_app/view/orders/companies_representatives.dart';
 import 'package:erp_app/view/orders/orders_details.dart';
 import 'package:erp_app/view/purchases/confirm_purchase.dart';
 import 'package:erp_app/view/store/stores.dart';
@@ -28,14 +32,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       locale: const Locale('ar'),
-      // routeInformationParser: const QRouteInformationParser(),
-      // routerDelegate: QRouterDelegate(Routes.routes),
       debugShowCheckedModeBanner: false,
       title: 'ERB System',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AddCat(),
+      home: const HomePage(),
     );
   }
 }

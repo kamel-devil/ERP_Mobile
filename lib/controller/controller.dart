@@ -15,6 +15,7 @@ import 'package:erp_app/view/system_admin/follow_users.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import '../view/accounts/convenent.dart';
 import '../view/category/add_cat.dart';
 import '../view/category/category.dart';
 import '../view/industry/confirm_indus.dart';
@@ -26,7 +27,7 @@ import '../view/store/stores.dart';
 import '../view/suppliers/suppliers.dart';
 
 class Controller extends GetxController {
-  Widget current = HomeTap();
+  Widget current = const HomeTap();
 
 //
   List screen = [
@@ -82,7 +83,7 @@ class Controller extends GetxController {
       Container(),
       Container(),
       Container(),
-      Container(),// 3hdh
+      const Convenent(),// 3hdh
       const PayCovenant()
 
     ],
@@ -90,7 +91,7 @@ class Controller extends GetxController {
       Container(),
       Container(),
       Container(),
-      FollowUser(),
+      const FollowUser(),
     ],
     [
       Container(),

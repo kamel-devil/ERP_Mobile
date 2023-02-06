@@ -2,8 +2,12 @@ import 'package:erp_app/components/default_container.dart';
 import 'package:erp_app/resources/color_manger.dart';
 import 'package:erp_app/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
+import '../../../controller/controller.dart';
 import '../../../resources/assets_manager.dart';
+import '../notification.dart';
 
 class HomeTap extends StatefulWidget {
   const HomeTap({Key? key}) : super(key: key);
@@ -20,7 +24,7 @@ class _HomeTapState extends State<HomeTap> {
     'المشتريات',
     'المصروفات',
     'الطلبات',
-    'حساب المندوبين \nوشركات الشحن',
+    'حساب المندوبين و شركات الشحن',
     'تقرير المخزون',
     'الاشعارات',
   ];
@@ -34,88 +38,10 @@ class _HomeTapState extends State<HomeTap> {
     ImageAssets.iconDropDown52,
   ];
 
-  List data = [
-    {
-      "first_name": "Suprem",
-      "last_name": "Nandal",
-      "email": "suprem.nandal@gmail.com",
-      "phone": "+911234567890",
-      "Quantity": "١٠",
-      "cost": "2000 جنيه",
-      "verified": true
-    },
-    {
-      "first_name": "Suprem",
-      "last_name": "Nandal",
-      "email": "suprem.nandal@gmail.com",
-      "phone": "+911234567890",
-      "Quantity": "١٠",
-      "cost": "2000 جنيه",
-      "verified": true
-    },
-    {
-      "first_name": "Suprem",
-      "last_name": "Nandal",
-      "email": "suprem.nandal@gmail.com",
-      "phone": "+911234567890",
-      "Quantity": "١٠",
-      "cost": "2000 جنيه",
-      "verified": false
-    },
-    {
-      "first_name": "Suprem",
-      "last_name": "Nandal",
-      "email": "suprem.nandal@gmail.com",
-      "phone": "+911234567890",
-      "Quantity": "١٠",
-      "cost": "2000 جنيه",
-      "verified": true
-    },
-    {
-      "first_name": "Suprem",
-      "last_name": "Nandal",
-      "email": "suprem.nandal@gmail.com",
-      "phone": "+911234567890",
-      "Quantity": "١٠",
-      "cost": "2000 جنيه",
-      "verified": true
-    },
-    {
-      "first_name": "Suprem",
-      "last_name": "Nandal",
-      "email": "suprem.nandal@gmail.com",
-      "phone": "+911234567890",
-      "Quantity": "١٠",
-      "cost": "2000 جنيه",
-      "verified": false
-    },
-  ];
-
-  List<String> columnData = [
-    "تاريخ الاستيلام",
-    "وحده القياس",
-    "الكميه",
-    "الصنف",
-  ];
-
-  List<String> columnData1 = [
-    "المبالغ المستحقه",
-    "عدد الطلبات",
-    "الفئه",
-    "اسم الشركة او المندوب",
-  ];
-  List<String> columnData2 = [
-    "المطلوب للطلبات",
-    "وحده القياس",
-    "الحد الادني",
-    "الكميه المتاحه",
-    "النوع",
-    "الصنف",
-  ];
-
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
+    Controller controller = Get.put(Controller());
     return SizedBox(
       width: double.maxFinite,
       height: double.maxFinite,
@@ -126,19 +52,23 @@ class _HomeTapState extends State<HomeTap> {
           const SizedBox(
             height: 30,
           ),
-          DefaultContainer(title: 'الاشعارات'),
+          DefaultContainer(title: 'الصفحه الرئيسيه'),
           Expanded(
             child: GridView.count(
-              shrinkWrap: true,
-              childAspectRatio: 1.3,
-              crossAxisCount: 3,
-              crossAxisSpacing: 50,
-              mainAxisSpacing: 50,
+              // shrinkWrap: true,
+              childAspectRatio: 1.2,
+              crossAxisCount: 2,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 40,
               padding: const EdgeInsets.all(8.0),
               children: List.generate(
                   title.length,
                   (index) => InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          if (title[index] == 'الاشعارات') {
+                            controller.changePage(NotificationPage());
+                          }
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
@@ -150,6 +80,7 @@ class _HomeTapState extends State<HomeTap> {
                             children: [
                               Text(
                                 title[index],
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: getProportionateScreenWidth(20),
                                     color: Colors.white),
